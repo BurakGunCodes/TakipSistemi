@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj": {}
+    "G:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj": {}
   },
   "projects": {
-    "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj": {
+    "G:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
+        "projectUniqueName": "G:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
         "projectName": "TakipSistemi",
-        "projectPath": "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
-        "packagesPath": "C:\\Users\\BGUN\\.nuget\\packages\\",
-        "outputPath": "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\obj\\",
+        "projectPath": "G:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
+        "packagesPath": "C:\\Users\\burak\\.nuget\\packages\\",
+        "outputPath": "G:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\BGUN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\burak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,6 +49,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.10, )"
             }
           },
           "imports": [

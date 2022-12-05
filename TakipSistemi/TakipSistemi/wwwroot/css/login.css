@@ -1,0 +1,28 @@
+﻿
+.form-control{
+    border-radius:15px;
+    background-color:lightgray;
+    border:solid 1px black;
+    
+}
+
+.btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:150px;
+    background-color:lightsalmon;
+}
+
+.LoginButton{
+    background-color:antiquewhite;
+}
+
+.LoginHeader{
+    background-color:orange;
+    text-align:center;
+}
+
+.RegisterButtonDiv{
+    background-color:pink;
+}
