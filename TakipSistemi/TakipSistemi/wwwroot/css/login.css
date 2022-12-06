@@ -6,16 +6,21 @@
     
 }
 
-.btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:150px;
-    background-color:lightsalmon;
+.btn {
+    border-radius: 25px;
+    display: block;
+    width: 80%;
+
+    background-color: lightsalmon;
 }
 
-.LoginButton{
-    background-color:antiquewhite;
+.LoginButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+
+    background-color: antiquewhite;
 }
 
 .LoginHeader{
@@ -23,6 +28,13 @@
     text-align:center;
 }
 
-.RegisterButtonDiv{
-    background-color:pink;
+.RegisterButtonDiv {
+    display: grid;
+    justify-content: right;
+    background-color: yellow;
+
+}
+
+.showpass{
+    position:fixed;
 }
