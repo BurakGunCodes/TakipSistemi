@@ -1,0 +1,76 @@
+﻿@model TakipSistemi.Models.LoginData
+
+@*<link rel="stylesheet" type="text/css" href="~/css/login.css">*@
+
+
+<hr />
+
+    <div class="col-md-4">
+        <form asp-action ="Login" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="LoginHeader">
+                <h4>Welcome</h4>
+            </div>
+
+            <div class="form-group">
+                <input type="email" asp-for="EmailAddr" class="form-control" placeholder="Email"/>
+                <span asp-validation-for="EmailAddr" class="text-danger"></span>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <input type="password" asp-for="Password" class="form-control" id="password" placeholder="Password" />
+                <div class="row">
+
+                    <div class="col"> 
+                        <span asp-validation-for="Password" class="text-danger"></span> 
+                     </div>
+
+                    <div class="col"> 
+                      
+
+
+
+                    </div>
+                    
+                </div>
+               
+                
+            </div>
+
+        <div class="LoginButton">
+             
+                <div class="row-cols-1">
+                <input type="submit" value="Login" class="btn btn-primary btn-lg btn-block" />
+
+                </div>
+
+                <div class="row-cols-2">
+                     @TempData["message"]
+                </div>
+
+            </div>
+
+            <br />
+            <div class="RegisterButtonDiv">
+                <h6> Don't have an account?</h6>
+                <a asp-action="Register" asp-controller="Login"> Sing Up </a>
+            </div>
+
+
+        <div class="col-md-12 text-center">
+            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-warning">Cancel</button>
+        </div>
+
+        </form>
+
+    </div>
+
+    <script src="~/js/login.js">  </script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
