@@ -27,6 +27,8 @@ namespace TakipSistemi.Models.ModelDtos
         [Display(Name = "Password Field")]
         public string Password { get; set; }
 
+
+        [Compare("Password",ErrorMessage ="Passwords do not match")]
         public string ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Name is Required")]

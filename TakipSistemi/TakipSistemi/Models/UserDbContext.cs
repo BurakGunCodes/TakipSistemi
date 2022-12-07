@@ -20,9 +20,6 @@ namespace TakipSistemi.Models
         }
 
 
-        public DbSet<UserData> SingUpData { get; set; }
-
-
-        public DbSet<TakipSistemi.Models.ModelDtos.UserDataCreate> UserDataCreate { get; set; }
+          public DbSet<TakipSistemi.Models.ModelDtos.UserDataCreate> UserDataCreate { get; set; }
     }
 }
