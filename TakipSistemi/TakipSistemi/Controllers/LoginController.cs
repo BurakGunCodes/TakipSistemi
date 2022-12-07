@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NuGet.Protocol.Plugins;
 using TakipSistemi.Models;
+using TakipSistemi.Models.Entities;
 
 namespace TakipSistemi.Controllers
 {

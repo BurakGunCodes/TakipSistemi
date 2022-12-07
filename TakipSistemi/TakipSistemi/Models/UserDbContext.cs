@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TakipSistemi.Models;
+using System.Configuration.Provider;
+using TakipSistemi.Models.Entities;
+using static System.Net.Mime.MediaTypeNames;
+using TakipSistemi.Models.ModelDtos;
 
 namespace TakipSistemi.Models
 {
@@ -12,9 +15,14 @@ namespace TakipSistemi.Models
         {
             //connection string : "Server=(localdb)\mssqllocaldb; Database=ECommerceDb; Trusted_Connection=True;"
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb; Database=VehicleTracking; Trusted_Connection=True;");
+
+
         }
 
 
-        public DbSet<TakipSistemi.Models.UserData> SingUpData { get; set; }
+        public DbSet<UserData> SingUpData { get; set; }
+
+
+        public DbSet<TakipSistemi.Models.ModelDtos.UserDataCreate> UserDataCreate { get; set; }
     }
 }
