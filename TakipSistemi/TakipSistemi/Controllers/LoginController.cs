@@ -37,7 +37,7 @@ namespace TakipSistemi.Controllers
                 }
                 return View();
 
-
+                 
             }
 
 
