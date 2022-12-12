@@ -9,6 +9,8 @@ namespace TakipSistemi.Models
     public class UserDbContext : DbContext
     {
         public DbSet<UserData> Users { get; set; }
+        public DbSet<RoadRoute> Routes { get; set; }
+        public DbSet<Coordinate> Coordinates { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -19,7 +21,5 @@ namespace TakipSistemi.Models
 
         }
 
-
-          public DbSet<TakipSistemi.Models.ModelDtos.UserDataCreate> UserDataCreate { get; set; }
     }
 }

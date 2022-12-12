@@ -7,11 +7,11 @@ function initMap() {
 
 
     var options = {
-        zoom: 18,
+        zoom: 4,
         center: { lat: 41.112663, lng: 29.021330 },
     }
 
-    var map = new google.maps.Map(document.getElementById('map'), options);
+     map = new google.maps.Map(document.getElementById('map'), options);
 
     // Add Market Function
     function AddMarker(Coordinates, Icon, Title) {
@@ -74,7 +74,8 @@ function initMap() {
         function (event) {
             AddMarker(event.latLng, "mesajABC");
             //document.getElementById("text").innerHTML += "posX:" + event.latLng.lat()  + "posY: " + event.latLng.lng() + "\n";
-            DrawLine(map, event.latLng.lat(), event.latLng.lng() );
+            DrawLine(map, event.latLng.lat(), event.latLng.lng());
+
         });
 
     const contentString = "<h6>Vehicle ID: 01 <br/> Vehicle State: XY <br/> Vehicle Speed: 100km/h </h6>";
@@ -90,45 +91,50 @@ function initMap() {
         infoWindow.open({ anchor: marker, map });
     });
 
-
+   
 }
 
 
 
-function MyLogScript() {
+function DrawRouteFromDB() {
 
+    
 
     var koordinatlar = myFunc();
 
+    let i = 0;
+    let myTimer = setInterval(function () {
+        DrawLine(map, koordinatlar[i].px, koordinatlar[i].py);
+        i++;
+        if (i == koordinatlar.length) {
+            clearInterval(myTimer);
+        }
+    }, 100);
 
-    for ( let i = 0; i < 5; i++) {
-        //console.log(koordinatlar[i]);
+   
 
-        setTimeout(function () {
+    //for (let i = 0; i < koordinatlar.length; i++) {
 
-            //console.log(koordinatlar[i].px);
-            //console.log( [{ "x" : koordinatlar[i].x }, { "y" : koordinatlar[i].y }] );
-
-            //DrawLine(map, koordinatlar[i].px, koordinatlar[i].py);
-            console.log("burak gun");
-
-        }, 1000);
-    }
+    //    DrawLine(map, koordinatlar[i].px, koordinatlar[i].py);
+    //    document.getElementById("text").innerHTML += i + ":" + koordinatlar[i].px + " , " + koordinatlar[i].py + "\n";
+    //}
 
 
 
-    //document.getElementById("text").innerHTML += "X:" + x + " " + "Y:" + y + "\n";
-   // var x = SelectIcon("bus");
-    document.getElementById("text").innerHTML += " Test ";
-
-    console.log();
 }
+
+
 
 function myFunc() {
     const koordinatlar = [
-        { px: 41.11299037279877, py: 41.11299037279877 },
-        { px: 41.11298228953945, py: 41.11298228953945 },
-        { px: 41.112739791296875, py: 41.112739791296875 }
+        { px: -31.727947896597026, py: 23.5281659375 },
+        { px: 24.28726182395493, py: 20.0125409375 },
+        { px: 30.675937106020623, py: 86.10629093749999 },
+        { px: 49.09562095194814, py: 113.52816593749999 },
+        { px: 69.59584988486232, py: 122.84457218749999 },
+        { px: 66.30215915922643, py: 68.52816593749999 },
+        { px: 48.69088431807663, py: 15.7937909375 }
+
     ]
 /*    for (i = 0; i < koordinatlar.length; i++) {
         return koordinatlar[i];
@@ -137,26 +143,23 @@ function myFunc() {
    /* console.log(koordinatlar);*/
 }
 
-let locX = new Array();
-let locY = new Array();
+var locX = new Array();
+var locY = new Array();
 
 function DrawLine(map,posX,posY) {
 
     locX.push(posX);
     locY.push(posY);
 
-    document.getElementById("text").innerHTML += posX + " " + posX + "\n";
-    //document.getElementById("text").innerHTML += locX[locX.length - 1] + " " + locY[locY.length - 1] + "\n";
+    //document.getElementById("text").innerHTML += posX + " " + posY + "\n";
+
+    document.getElementById("text").innerHTML += "x:" + locX[locX.length - 1] + ", y:" + locY[locY.length - 1] + "\n";
     //document.getElementById("text").innerHTML += "length:" + locY.length +  "\n";
     //document.getElementById("text").innerHTML += "newpos:" + newPos;
 
 
 
     if (locX.length >= 2) {
-
-
-
-
 
         var line = new google.maps.Polyline({
             path: [

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TakipSistemi.Models;
 
@@ -10,9 +11,11 @@ using TakipSistemi.Models;
 namespace TakipSistemi.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    partial class UserDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221212130754_route_database_added")]
+    partial class routedatabaseadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,49 +23,6 @@ namespace TakipSistemi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("TakipSistemi.Models.Entities.Coordinate", b =>
-                {
-                    b.Property<int>("CoordinateId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CoordinateId"));
-
-                    b.Property<string>("Lat")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Lng")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RouteId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CoordinateId");
-
-                    b.HasIndex("RouteId");
-
-                    b.ToTable("Coordinates");
-                });
-
-            modelBuilder.Entity("TakipSistemi.Models.Entities.RoadRoute", b =>
-                {
-                    b.Property<int>("RouteId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RouteId"));
-
-                    b.Property<string>("RouteName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("RouteId");
-
-                    b.ToTable("Routes");
-                });
 
             modelBuilder.Entity("TakipSistemi.Models.Entities.UserData", b =>
                 {
@@ -99,15 +59,45 @@ namespace TakipSistemi.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("TakipSistemi.Models.Entities.Coordinate", b =>
+            modelBuilder.Entity("TakipSistemi.Models.ModelDtos.UserDataCreate", b =>
                 {
-                    b.HasOne("TakipSistemi.Models.Entities.RoadRoute", "Route")
-                        .WithMany()
-                        .HasForeignKey("RouteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Navigation("Route");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Birthdate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ConfirmPassword")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmailAddr")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserDataCreate");
                 });
 #pragma warning restore 612, 618
         }
