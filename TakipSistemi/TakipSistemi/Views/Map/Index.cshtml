@@ -1,0 +1,101 @@
+﻿@model TakipSistemi.Models.Maps.Location
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+
+    <style>
+
+        .layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            /* grid-template-rows: 1fr 1fr;*/
+            gap: 8px;
+        }
+
+            .layout > div {
+                border: solid;
+                border-color: black;
+            }
+
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <section class="layout">
+        <div id="map">1</div>
+        <div>
+            <h2 style="text-align:center">Output</h2>
+            <textarea id="text" name="textname" rows="10" cols="50"></textarea>
+        </div>
+    </section>
+
+
+    <div>
+        <input onclick="MyLogScript()" type="button" name="btn" value="Log"></input>
+        @*<input onclick="ChangeIcon()" type="button" name="btn" value="Icon"></input>*@
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+
+
+<footer>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+    <script type="text/javascript" src="~/js/MapAPI.js">    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
+</footer>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

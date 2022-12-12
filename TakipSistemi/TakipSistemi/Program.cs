@@ -1,14 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using TakipSistemi.Data;
+
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("TakipSistemiContextConnection") ?? throw new InvalidOperationException("Connection string 'TakipSistemiContextConnection' not found.");
 
-builder.Services.AddDbContext<TakipSistemiContext>(options =>
-    options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<TakipSistemiUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<TakipSistemiContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -33,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Login}/{action=Login}/{id?}");
+    pattern: "{controller=Map}/{action=Index}/{id?}");
 
 app.Run();
