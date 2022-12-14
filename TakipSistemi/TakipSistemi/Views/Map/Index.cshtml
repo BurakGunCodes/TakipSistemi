@@ -46,8 +46,13 @@
 
 
     <div>
-        <input onclick="MyLogScript()" type="button" name="btn" value="Log"></input>
-        <input onclick="DrawRouteFromDB()" type="button" name="DrafDB" value="FromDB"></input>
+        @*<input onclick="MyLogScript()" type="button" name="btn" value="Log"></input>*@
+        <input onclick="DrawRoute()" type="button" name="DrafDB" value="DrawRoute"></input>
+        <input onclick="Undo()" type="button" name="undo" value="Undo" id = "BtnUndo" ></input>
+
+        <input onclick="ShowMarkers()" type="button" name="gerial" value="Show Markers"></input>
+        <input onclick="HideMarkers()" type="button" name="gerial" value="Hide Markers"></input>
+        <input onclick="DeleteMarkers()" type="button" name="gerial" value="Delete Markers"></input>
         @*<input onclick="ChangeIcon()" type="button" name="btn" value="Icon"></input>*@
     </div>
 
@@ -75,12 +80,15 @@
 
 
 <footer>
+    <script type="text/javascript" src="~/js/mapsapi/init/init.js"></script>
+    <script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
+    <script type="text/javascript" src="~/js/mapsapi/polyline/polyline.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
-    <script type="text/javascript" src="~/js/MapAPI.js">    </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
 </footer>
 
 </html>
+
 
 
 

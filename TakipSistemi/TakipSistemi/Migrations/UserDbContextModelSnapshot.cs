@@ -9,7 +9,7 @@ using TakipSistemi.Models;
 
 namespace TakipSistemi.Migrations
 {
-    [DbContext(typeof(UserDbContext))]
+    [DbContext(typeof(SystemDbContext))]
     partial class UserDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

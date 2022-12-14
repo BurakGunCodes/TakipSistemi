@@ -7,7 +7,7 @@ namespace TakipSistemi.Controllers
 {
     public class UserController : Controller
     {
-        UserDbContext _context = new UserDbContext();
+        SystemDbContext _context = new SystemDbContext();
 
 
         [HttpGet]

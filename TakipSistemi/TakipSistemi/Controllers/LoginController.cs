@@ -7,7 +7,7 @@ namespace TakipSistemi.Controllers
 {
     public class LoginController : Controller
     {
-        UserDbContext _context = new UserDbContext();
+        SystemDbContext _context = new SystemDbContext();
 
 
         public IActionResult Register()

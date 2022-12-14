@@ -6,7 +6,7 @@ using TakipSistemi.Models.ModelDtos;
 
 namespace TakipSistemi.Models
 {
-    public class UserDbContext : DbContext
+    public class SystemDbContext : DbContext
     {
         public DbSet<UserData> Users { get; set; }
         public DbSet<RoadRoute> Routes { get; set; }

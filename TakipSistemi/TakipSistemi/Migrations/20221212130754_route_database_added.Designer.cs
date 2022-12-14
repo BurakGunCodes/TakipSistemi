@@ -10,7 +10,7 @@ using TakipSistemi.Models;
 
 namespace TakipSistemi.Migrations
 {
-    [DbContext(typeof(UserDbContext))]
+    [DbContext(typeof(SystemDbContext))]
     [Migration("20221212130754_route_database_added")]
     partial class routedatabaseadded
     {
