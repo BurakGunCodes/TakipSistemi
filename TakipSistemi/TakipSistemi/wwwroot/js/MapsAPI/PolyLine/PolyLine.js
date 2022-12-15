@@ -5,6 +5,9 @@ var lines = [];
 
 const Konumlar = [];
 
+var randomColor = "#";
+
+
 function DrawLine(map, x, y) {
 
     console.log(x,y);
@@ -13,7 +16,8 @@ function DrawLine(map, x, y) {
 
    // document.getElementById("text").innerHTML += "{px:" + posX + ", py:" + posY + "}," + "\n";
 
-   
+    randomColor = "";
+    randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).toUpperCase();
 
         line = new google.maps.Polyline({
             //path: [
@@ -21,7 +25,7 @@ function DrawLine(map, x, y) {
             //    new google.maps.LatLng(locX[locX.length - 2], locY[locY.length - 2])
             //],
             path: Konumlar,
-            strokeColor: "#FF0000",
+            strokeColor: randomColor,
             strokeOpacity: 1.0,
             strokeWeight: 3,
             //geodesic: true, //oval tarzı çizim
@@ -38,7 +42,7 @@ function DrawLine(map, x, y) {
         AddMarker(map, { lat: x, lng: y }, "",  "Start");
     }
 
-    console.log(Konumlar);
+    console.log(randomColor);
 
     //document.getElementById("BtnUndo").disabled = false;
 }
@@ -169,6 +173,24 @@ function Undo() {
 function Log() {
     //const path = line.getPath();
     //console.log("path:", path);
+  
+    console.log(randomColor);
     console.log(Konumlar.length);
     //console.log(lines[1].getPath());
+}
+
+// diziler 2 boyutlu olacak.
+// Konumlar[konumIndexi][konumlar]
+
+function Save() {
+    // veri tabanına kaydetme yapılacak
+
+    AddMarker(map, Konumlar[Konumlar.length - 1], "", "Stop");
+    while (Konumlar.length) {
+        lines.pop();
+        Konumlar.pop();
+    }
+   
+    
+    console.log(Konumlar.length);
 }
