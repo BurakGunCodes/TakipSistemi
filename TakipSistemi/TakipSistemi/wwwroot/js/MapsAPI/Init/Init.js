@@ -9,7 +9,7 @@ function initMap() {
 
 
     var options = {
-        zoom: 4,
+        zoom: 2,
         center: { lat: 41.112663, lng: 29.021330 },
         draggableCursor: 'crosshair',
     }
@@ -21,9 +21,9 @@ function initMap() {
     // Add marker where you clicked
     google.maps.event.addListener(map, 'click',
         function (event) {
-            AddMarker(map, event.latLng, "man", "BurakGun");
+            //AddMarker(map, event.latLng, "man", "BurakGun");
             //document.getElementById("text").innerHTML += "posX:" + event.latLng.lat()  + "posY: " + event.latLng.lng() + "\n";
-            DrawLine(map, event.latLng.lat(), event.latLng.lng());
+            DrawLine(map, event.latLng.lat(), event.latLng.lng() );
 
         });
 
