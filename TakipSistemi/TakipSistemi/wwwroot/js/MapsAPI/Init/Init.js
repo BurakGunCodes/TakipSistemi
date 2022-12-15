@@ -3,7 +3,7 @@
  * https://console.cloud.google.com/google/maps-apis/metrics?project=luminous-byway-367506
  */
 
-
+var map;
 
 function initMap() {
 

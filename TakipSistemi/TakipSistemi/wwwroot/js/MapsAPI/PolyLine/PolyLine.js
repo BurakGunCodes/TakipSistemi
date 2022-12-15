@@ -1,8 +1,11 @@
 ﻿
 
-var lines=[];
+var line = [];
+var lines = [];
 
-function DrawLine(map, x,y) {
+const Konumlar = [];
+
+function DrawLine(map, x, y) {
 
     console.log(x,y);
 
@@ -20,9 +23,8 @@ function DrawLine(map, x,y) {
             path: Konumlar,
             strokeColor: "#FF0000",
             strokeOpacity: 1.0,
-            strokeWeight: 5,
-            //geodesic: true,
-            // editable: true,
+            strokeWeight: 3,
+            //geodesic: true, //oval tarzı çizim
             map: map
         });
 
@@ -31,41 +33,21 @@ function DrawLine(map, x,y) {
 
     line.setMap(map);
 
+
+    if (Konumlar.length <= 1) {
+        AddMarker(map, { lat: x, lng: y }, "",  "Start");
+    }
+
     console.log(Konumlar);
 
     //document.getElementById("BtnUndo").disabled = false;
 }
 
-function addLatLng(event) {
-    const path = line.getPath();
-
-    // Because path is an MVCArray, we can simply append a new coordinate
-    // and it will automatically appear.
-    path.push(event.latLng);
-
-    new google.maps.Marker({
-        position: event.latLng,
-        title: "#" + path.getLength(),
-        map: map,
-    });
-
-    console.log("path:", path);
-}
-
-function removeLatLng(event) {
-  
-    path.pop();
-
-}
 
 
-koordinatlar = GetRoute();
 
 function DrawRoute() {
 
-
-
-     
 
     let i = 0;
     let myTimer = setInterval(function () {
@@ -79,7 +61,7 @@ function DrawRoute() {
 }
 
 
-const Konumlar = [];
+
 
 
 
@@ -180,5 +162,13 @@ function Undo() {
     lines.pop();
     Konumlar.pop();
 
-    console.log(Konumlar);
+    console.log(lines );
+}
+
+
+function Log() {
+    //const path = line.getPath();
+    //console.log("path:", path);
+    console.log(Konumlar.length);
+    //console.log(lines[1].getPath());
 }
