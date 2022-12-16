@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using TakipSistemi.Models;
 using TakipSistemi.Models.Entities;
 using TakipSistemi.Models.ModelDtos;
@@ -19,13 +20,13 @@ namespace TakipSistemi.Controllers
 
 
         [HttpPost]
-        public IActionResult MapCoordinateCreate(List<MapCoordinateCreate> MapCoordinateList)
+        public IActionResult MapCoordinateCreate(List<MapCoordinateCreate> MapCoordinateList, string RouteName)
         {
             if (MapCoordinateList?.Count >0 )
             {
                 RoadRoute route = new RoadRoute()
                 {
-                     RouteName="Test",
+                     RouteName= RouteName,
         
                 };
 

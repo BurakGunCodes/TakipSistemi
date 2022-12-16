@@ -193,12 +193,14 @@ function Save() {
     try
     {
         console.log(MapCoordinateList);
+        var _RouteName = document.getElementById("RouteName").value; // bu veri textbox içerisinden gelecek
+        console.log(_RouteName);
 
             $.ajax({
                 type: "POST",
                 url: "/Map/MapCoordinateCreate",
-            content: "application/json; charset=utf-8",
-                data: { MapCoordinateList: MapCoordinateList },
+                content: "application/json; charset=utf-8",
+                data: { MapCoordinateList: MapCoordinateList, RouteName: _RouteName },
             success: function (data) {},
             error: function () {}
             });
