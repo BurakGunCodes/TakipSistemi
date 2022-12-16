@@ -17,7 +17,7 @@ namespace TakipSistemi.Models.Entities
         public int RouteId { get; set; }
         public string RouteName { get; set; }
 
-        List<Coordinate> Coordinates { get; set; }
+        public List<Coordinate> Coordinates { get; set; }
 
     }
 }

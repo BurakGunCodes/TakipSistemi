@@ -3,28 +3,29 @@
 var line = [];
 var lines = [];
 
-const Konumlar = [];
+const MapCoordinateList = [];
 
-var randomColor = "#";
-
+var randomColor;
+randomColor = "";
+randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).toUpperCase();
 
 function DrawLine(map, x, y) {
 
     console.log(x,y);
+    var MapCoordinateCreate = { lat: x, lng: y };
 
-    Konumlar.push({ lat: x, lng: y });
+    MapCoordinateList.push({ lat: x, lng: y } );
 
    // document.getElementById("text").innerHTML += "{px:" + posX + ", py:" + posY + "}," + "\n";
 
-    randomColor = "";
-    randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).toUpperCase();
+
 
         line = new google.maps.Polyline({
             //path: [
             //    new google.maps.LatLng(locX[locX.length - 1], locY[locY.length - 1]),
             //    new google.maps.LatLng(locX[locX.length - 2], locY[locY.length - 2])
             //],
-            path: Konumlar,
+            path: MapCoordinateList,
             strokeColor: randomColor,
             strokeOpacity: 1.0,
             strokeWeight: 3,
@@ -38,7 +39,7 @@ function DrawLine(map, x, y) {
     line.setMap(map);
 
 
-    if (Konumlar.length <= 1) {
+    if (MapCoordinateList.length <= 1) {
         AddMarker(map, { lat: x, lng: y }, "",  "Start");
     }
 
@@ -154,7 +155,7 @@ function Undo() {
     //ShowMarkers();
 
     //line.setMap(null);
-    //Konumlar.pop();
+    //MapCoordinateList.pop();
 
     //(line.setMap(null);
 
@@ -164,7 +165,7 @@ function Undo() {
     lines[i - 1].setMap(null);
 
     lines.pop();
-    Konumlar.pop();
+    MapCoordinateList.pop();
 
     console.log(lines );
 }
@@ -173,24 +174,59 @@ function Undo() {
 function Log() {
     //const path = line.getPath();
     //console.log("path:", path);
-  
-    console.log(randomColor);
-    console.log(Konumlar.length);
+
+    //console.log(randomColor);
+    //console.log(MapCoordinateList.length);
     //console.log(lines[1].getPath());
+
+    console.log(MapCoordinateList);
 }
 
 // diziler 2 boyutlu olacak.
-// Konumlar[konumIndexi][konumlar]
+// MapCoordinateList[konumIndexi][MapCoordinateList]
 
 function Save() {
     // veri tabanına kaydetme yapılacak
 
-    AddMarker(map, Konumlar[Konumlar.length - 1], "", "Stop");
-    while (Konumlar.length) {
+
+    
+    try
+    {
+        console.log(MapCoordinateList);
+
+            $.ajax({
+                type: "POST",
+                url: "/Map/MapCoordinateCreate",
+            content: "application/json; charset=utf-8",
+                data: { MapCoordinateList: MapCoordinateList },
+            success: function (data) {},
+            error: function () {}
+            });
+
+    } 
+    catch (err) {
+        console.log(err);
+    }
+
+
+
+
+    console.log(MapCoordinateList);
+
+    AddMarker(map, MapCoordinateList[MapCoordinateList.length - 1], "", "Stop");
+    while (MapCoordinateList.length) {
         lines.pop();
-        Konumlar.pop();
+        MapCoordinateList.pop();
     }
    
     
-    console.log(Konumlar.length);
+    //console.log(MapCoordinateList);
+
+
+    randomColor = "";
+    randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).toUpperCase();
+
+
+
+
 }
