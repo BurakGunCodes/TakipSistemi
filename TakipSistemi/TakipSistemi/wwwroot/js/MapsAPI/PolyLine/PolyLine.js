@@ -215,7 +215,7 @@ function Save() {
 
     console.log(MapCoordinateList);
 
-    AddMarker(map, MapCoordinateList[MapCoordinateList.length - 1], "", "Stop");
+    AddMarker(map, MapCoordinateList[MapCoordinateList.length - 1], "stop", "Stop");
     while (MapCoordinateList.length) {
         lines.pop();
         MapCoordinateList.pop();

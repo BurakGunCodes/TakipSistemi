@@ -65,7 +65,10 @@ function SelectIcon(input) {
         case "man":
             image = baseURL + "man.png";
             break;
-
+        case "stop":
+            image = "https://icons8.com/icon/15181/stop-sign";
+            break;
+            
 
     }
 

@@ -1,0 +1,50 @@
+﻿@model TakipSistemi.Models.Maps.Location
+
+<input type="submit" value="Post Et" id="burakbuton" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    console.log("haci amca");
+
+    var array = new Array();
+    var i = 0;
+    $("#burakbuton").click(function () {
+        console.log("burak kardes");
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Map/GetCoordinate",
+                    data: { y : 3 },
+                    success: function (response) {
+                        //alert("Hello:" +  response);
+                        //array.push({"Lng:":response.Lng});
+                        var data = JSON.stringify(response);
+                        console.log(data);
+                        for(i=0;i<data.length;i++)
+                        {
+                            array.push({ lat: data[i].lat, lng: data[i].lng });
+                        }
+                        
+                        console.log(array);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                   }
+                });
+            });
+
+            console.log(array);
+
+</script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+
+
+

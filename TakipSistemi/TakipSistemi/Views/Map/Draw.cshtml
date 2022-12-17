@@ -1,0 +1,19 @@
+﻿@*
+<input type="submit" value="Post Et" id="btnPost" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnPost").click(function () {
+            $.ajax({
+                url: '@Url.Action("Draw","Map")',
+                dataType: 'json',
+                data: { x: 3 },
+                success: function (data) {
+                    alert(data + ' verisi gelmiştir.');
+                }
+            });
+        });
+    });
+</script>*@
+
+

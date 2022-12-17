@@ -1,0 +1,29 @@
+﻿@model List< TakipSistemi.Models.Entities.Coordinate>
+
+<div>
+    <h4>Coordinate</h4>
+    <hr />
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                guzergah bilgisi
+                
+            </div style>
+            <div class="col-lg-10" style="background-color:lightcyan">
+                @await Component.InvokeAsync("DrawRouteOnMap")
+            </div>
+
+        </div>
+    </div>
+  
+
+  
+
+
+
+</div>
+<div>
+    
+    <a asp-action="Index">Back to List</a>
+</div>
