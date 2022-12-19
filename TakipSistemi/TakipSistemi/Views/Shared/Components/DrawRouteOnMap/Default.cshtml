@@ -23,11 +23,7 @@
 <footer>
 </footer>
 
-<script type="text/javascript" src="~/js/mapsapi/init/init.js"></script>
-<script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
-<script type="text/javascript" src="~/js/mapsapi/polyline/polyline.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
+
 
 
 </html>
@@ -35,15 +31,7 @@
 
 
 
-
-
-
-
-
-
-
-
-<input type="submit" value="Post Et" id="burakbuton" />
+<input type="submit" value="XYZ" id="burakbuton" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -61,15 +49,14 @@
             url: "/Map/GetCoordinate",
             data: { y: 3 },
             success: function (response) {
-                //alert("Hello:" +  response);
+                console.log(response[0].lng);
+                alert(response[0].lng);
                 //array.push({"Lng:":response.Lng});
-                var data = JSON.stringify(response);
-                console.log(data);
-                for (i = 0; i < data.length; i++) {
-                    //array.push({ lat: data[i].lat, lng: data[i].lng });
-                }
+               // var data = JSON.stringify(response);
+                
 
-                console.log(array);
+
+               // console.log(array);
             },
             failure: function (response) {
                 alert(response.responseText);
@@ -80,13 +67,17 @@
         });
     });
 
-    console.log(array);
+    //console.log(array);
 
 </script>
 
 
 
 
-
+<script type="text/javascript" src="~/js/mapsapi/init/init.js"></script>
+<script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
+<script type="text/javascript" src="~/js/mapsapi/polyline/polyline.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
 
 

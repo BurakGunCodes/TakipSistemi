@@ -30,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Map}/{action=GetCoordinates}/{id?}");
+    pattern: "{controller=Map}/{action=List}/{id?}");
 
 app.Run();

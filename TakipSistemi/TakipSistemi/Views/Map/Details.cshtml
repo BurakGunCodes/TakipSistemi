@@ -1,5 +1,5 @@
 ﻿@model List< TakipSistemi.Models.Entities.Coordinate>
-
+@ViewData["id"]
 <div>
     <h4>Coordinate</h4>
     <hr />
@@ -11,7 +11,7 @@
                 
             </div style>
             <div class="col-lg-10" style="background-color:lightcyan">
-                @await Component.InvokeAsync("DrawRouteOnMap")
+                <div id="map" style="height:700px;width:100%">div area</div>
             </div>
 
         </div>
@@ -23,7 +23,69 @@
 
 
 </div>
+
+
+
 <div>
-    
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="List">Back to List</a>
 </div>
+
+
+@*// burada harita çizimi yapılacak
+// View component kullanmaya gerek yok*@
+
+
+<input type="submit" value="Post Et" id="burakbuton" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/mapsapi/init/init.js"></script>
+<script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
+<script type="text/javascript" src="~/js/mapsapi/drawroute/drawroutefromdb.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
+
+
+<script type="text/javascript">
+
+    var  coordinates = [];
+    var id  = @ViewData["id"]; // details basıldıgı zaman alacagı deger
+    console.log(id);
+
+// fonksiyon cagirildi an verileri al
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Map/GetCoordinate",
+                    data: { id : id },
+                    success: function (response) {
+                        //alert("Hello:" +  response);
+                        //array.push({"Lng:":response.Lng});
+                       
+                        //if(response.length > 0){
+                        //    coordinates = response;
+                        //}
+                        for(i=0;i<response.length;i++){
+
+                            let coordinate={ lat: parseFloat( response[i].lat), lng: parseFloat(response[i].lng)};
+                            
+                            coordinates.push(coordinate);
+                        }
+
+                        console.log("koordinatlar:",coordinates);
+                      
+                       
+                        DrawRoute(coordinates);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                   }
+                });
+     
+
+
+</script>
+
+

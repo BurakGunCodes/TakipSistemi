@@ -6,28 +6,24 @@
 
 <script type="text/javascript">
 
-    console.log("haci amca");
+    var  coordinates = [];
+    var id; // details basıldıgı zaman alacagı deger
 
-    var array = new Array();
-    var i = 0;
     $("#burakbuton").click(function () {
         console.log("burak kardes");
 
                 $.ajax({
                     type: "POST",
                     url: "/Map/GetCoordinate",
-                    data: { y : 3 },
+                    data: { y : id },
                     success: function (response) {
                         //alert("Hello:" +  response);
                         //array.push({"Lng:":response.Lng});
-                        var data = JSON.stringify(response);
-                        console.log(data);
-                        for(i=0;i<data.length;i++)
-                        {
-                            //array.push({ lat: data[i].lat, lng: data[i].lng });
+                       
+                        if(response.length > 0){
+                            coordinates = response;
                         }
-                        
-                        console.log(array);
+                        console.log(coordinates);
                     },
                     failure: function (response) {
                         alert(response.responseText);
@@ -38,7 +34,7 @@
                 });
             });
 
-            console.log(array);
+     
 
 </script>
 

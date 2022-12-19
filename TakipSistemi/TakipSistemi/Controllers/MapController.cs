@@ -22,24 +22,29 @@ namespace TakipSistemi.Controllers
         }
 
         [HttpPost]
-        public IActionResult GetCoordinates(int y)
+        public IActionResult GetCoordinates(int id)
         {
             return View();
         }
 
         [HttpPost]
-        public JsonResult GetCoordinate(int y)
+        public JsonResult GetCoordinate(int id)
         {
-            var coor = _context.Coordinates.Where(x => x.RouteId == y).ToList();
+            var coor = _context.Coordinates.Where(x => x.RouteId == id).ToList();
 
-            List<Coordinate> coordinates = new List<Coordinate>();  
+            List<Coordinate> coordinates = new List<Coordinate>();
 
-            Coordinate coordinate= new Coordinate();
+            Coordinate coordinate;
 
             foreach (var item in coor)
             {
-                coordinate.Lat = item.Lat;
-                coordinate.Lng = item.Lng;
+                coordinate = new Coordinate()
+                {
+                    CoordinateId = item.CoordinateId,
+                    RouteId = item.RouteId,
+                    Lng = item.Lng,
+                    Lat = item.Lat,
+                };
 
                 coordinates.Add(coordinate);
             }
@@ -58,6 +63,7 @@ namespace TakipSistemi.Controllers
         {
             //route id
             var result = _context.Coordinates.Where(x => x.RouteId == id).ToList();
+            ViewData["id"] = id;    
             return View(result);
         }
 
