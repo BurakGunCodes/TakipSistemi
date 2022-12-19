@@ -26,6 +26,7 @@ function DrawLine(map, x, y) {
             //    new google.maps.LatLng(locX[locX.length - 2], locY[locY.length - 2])
             //],
             path: MapCoordinateList,
+            center: { lat: 41.112663, lng: 29.021330 },
             strokeColor: randomColor,
             strokeOpacity: 1.0,
             strokeWeight: 3,
@@ -201,7 +202,9 @@ function Save() {
                 url: "/Map/MapCoordinateCreate",
                 content: "application/json; charset=utf-8",
                 data: { MapCoordinateList: MapCoordinateList, RouteName: RouteName },
-            success: function (data) {},
+                success: function (data) {
+                    console.log("kayit sonucu", data);
+                },
             error: function () {}
             });
 
@@ -215,7 +218,7 @@ function Save() {
 
     console.log(MapCoordinateList);
 
-    AddMarker(map, MapCoordinateList[MapCoordinateList.length - 1], "stop", "Stop");
+    AddMarker(map, MapCoordinateList[MapCoordinateList.length - 1], "", "Stop");
     while (MapCoordinateList.length) {
         lines.pop();
         MapCoordinateList.pop();

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using TakipSistemi.Models;
 using TakipSistemi.Models.Entities;
 using TakipSistemi.Models.ModelDtos.MapDtos;
-
+using Microsoft.EntityFrameworkCore;
 namespace TakipSistemi.Controllers
 {
     public class MapController : Controller
@@ -67,9 +67,32 @@ namespace TakipSistemi.Controllers
             return View(result);
         }
 
-        [HttpPost]
-        public IActionResult MapCoordinateCreate(List<MapCoordinateCreate> MapCoordinateList, string RouteName)
+        public IActionResult Delete(int id)
         {
+            // route id
+            var result =_context.Routes.FirstOrDefault(x => x.RouteId == id);
+            if(result != null)
+            {
+                _context.Remove(result);
+                int IsSaved = _context.SaveChanges();
+
+                if (IsSaved == 1) { TempData["msg"] = id + " Rota Id sahibi veri silindi "; }
+                else { TempData["msg"] = id + " Rota Id sahibi veri silinemedi. Kontrol Et. "; }
+            }
+            else
+            {
+                TempData["msg"] = id + " Rota Id sahibi veri silinemedi. Kontrol Et. ";
+            }
+
+            
+            return View();
+        }
+
+
+        [HttpPost]
+        public int MapCoordinateCreate(List<MapCoordinateCreate> MapCoordinateList, string RouteName)
+        {
+            int sonuc;
             if (MapCoordinateList?.Count > 0)
             {
                 RoadRoute route = new RoadRoute()
@@ -79,7 +102,7 @@ namespace TakipSistemi.Controllers
                 };
 
                 _context.Routes.Add(route);
-                int sonuc = _context.SaveChanges();
+                 sonuc = _context.SaveChanges();
 
                 List<Coordinate> list = new List<Coordinate>();
                 Coordinate coordinate;
@@ -97,17 +120,15 @@ namespace TakipSistemi.Controllers
                 }
 
                 _context.Coordinates.AddRange(list);
-                //userDataCreate i User Dataya donuştür;
 
                 sonuc += _context.SaveChanges();
 
-                //_context.Users.Add(userData);
 
 
-
+                return sonuc; 
             }
 
-            return View();
+            return -1;
         }
 
 
