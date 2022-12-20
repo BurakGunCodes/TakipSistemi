@@ -2,15 +2,15 @@
 /*
  * https://console.cloud.google.com/google/maps-apis/metrics?project=luminous-byway-367506
  */
-
+/*<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>*/
  
 
 function initMap() {
 
 
     var options = {
-        zoom: 8,
-        center: { lat: 40.783333,  lng: 30.400000 },
+        zoom: 6,
+        center: { lat: 38.734802,  lng: 35.467987 }, // orta nokta olsun diye Konya lokasyonu
         draggableCursor: 'crosshair',
     }
 
@@ -32,3 +32,5 @@ function initMap() {
 
 
 }
+
+

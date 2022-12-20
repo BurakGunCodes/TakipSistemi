@@ -51,19 +51,19 @@ function DrawLine(map, x, y) {
 
 
 
-function DrawRoute() {
+//function DrawRoute() {
 
 
-    let i = 0;
-    let myTimer = setInterval(function () {
-        DrawLine(map, koordinatlar[i].px, koordinatlar[i].py);
-        i++;
-        if (i == koordinatlar.length) {
-            clearInterval(myTimer);
-        }
-    }, 100);
+//    let i = 0;
+//    let myTimer = setInterval(function () {
+//        DrawLine(map, koordinatlar[i].px, koordinatlar[i].py);
+//        i++;
+//        if (i == koordinatlar.length) {
+//            clearInterval(myTimer);
+//        }
+//    }, 100);
 
-}
+//}
 
 
 
