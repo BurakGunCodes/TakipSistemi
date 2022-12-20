@@ -60,27 +60,32 @@
 
     <div>
         @*<input onclick="MyLogScript()" type="button" name="btn" value="Log"></input>*@
-        <input onclick="DrawRoute()" type="button" name="DrafDB" value="DrawRoute"></input>
-        <input onclick="Undo()" type="button" name="undo" value="Undo" id = "BtnUndo" ></input>
-
+        @* <input onclick="DrawRoute()" type="button" name="DrafDB" value="DrawRoute"></input>*@
+        @*<input onclick="Log()" type="button" name="" value="Log"></input>*@
+        
         <input onclick="ShowMarkers()" type="button" name="" value="Show Markers"></input>
         <input onclick="HideMarkers()" type="button" name="" value="Hide Markers"></input>
         <input onclick="DeleteMarkers()" type="button" name="" value="Delete Markers"></input>
-        <input onclick="Log()" type="button" name="" value="Log"></input>
+        
        
 
 
     </div>
 
     <div>
+
+        <label for"RouteName">Enter Route Name</label>
+        <input type="text" placeholder="Route Name" id="RouteName" required> </input>
         
-        <input type="text" placeholder="Entr Route Name" id="RouteName"> </input>
         <input onclick="Save()" type="button" name="" value="Save"></input>
+        <input onclick="Undo()" type="button" name="undo" value="Undo" id="BtnUndo"></input>
     </div>
 
 
 
-
+    <div>
+    <a asp-action="List">Go to List</a>
+    </div>
 
 
 

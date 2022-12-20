@@ -9,7 +9,7 @@ function AddMarker(Map, Coordinates, Icon, Title) {
         icon: SelectIcon(Icon),
     });
 
-    markers.push(marker);
+    markers.push(marker); 
 }
 
 // Sets the map on all markers in the array.

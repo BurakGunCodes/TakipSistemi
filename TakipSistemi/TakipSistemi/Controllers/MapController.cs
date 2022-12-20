@@ -11,7 +11,7 @@ namespace TakipSistemi.Controllers
     {
         SystemDbContext _context = new SystemDbContext();
 
-        public IActionResult Index()
+        public IActionResult Create()
         {
             return View();
         }

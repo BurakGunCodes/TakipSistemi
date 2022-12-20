@@ -9,8 +9,8 @@ function initMap() {
 
 
     var options = {
-        zoom: 2,
-        center: { lat: 41.112663, lng: 29.021330 },
+        zoom: 8,
+        center: { lat: 40.783333,  lng: 30.400000 },
         draggableCursor: 'crosshair',
     }
 

@@ -3,9 +3,9 @@ var lines = [];
 
 
 
-var randomColor;
-randomColor = "";
-randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).toUpperCase();
+//var randomColor;
+//randomColor = "";
+//randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).toUpperCase();
 
 
 
@@ -15,7 +15,7 @@ function DrawRoute(CoordinateList) {
 
 
     var MapOptions = {
-        zoom: 12,
+        zoom: 14,
         center: { lat: CoordinateList[0].lat, lng: CoordinateList[0].lng },
         disableDefaultUI: true,
         scaleControl: true,
@@ -29,7 +29,7 @@ function DrawRoute(CoordinateList) {
 
         //strokeColor: randomColor,
         strokeOpacity: 1.0,
-        strokeWeight: 3,
+        strokeWeight: 13,
         //geodesic: true, //oval tarzı çizim
         map: RouteMap
     });
