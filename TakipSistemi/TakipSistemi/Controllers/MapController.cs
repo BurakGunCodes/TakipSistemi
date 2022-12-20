@@ -11,6 +11,9 @@ namespace TakipSistemi.Controllers
     {
         SystemDbContext _context = new SystemDbContext();
 
+        // Dil Tercihi Eklenecek(Tr-Eng)
+        // Indentity Eklenecek
+
         public IActionResult Create()
         {
             return View();
