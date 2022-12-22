@@ -1,8 +1,22 @@
 ﻿@model IEnumerable<TakipSistemi.Models.Entities.RoadRoute>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm" style="background-color:antiquewhite">
+            <p>
+                <a class="btn btn-info   m-1" style="text-decoration:none" href="Create" role="button">Create New</a>
+            </p>
+        </div>
+        <div class="col-sm" style="background-color:antiquewhite">
+            <p class="d-flex justify-content-end" >
+                <a class="btn btn-info   m-1" style="text-decoration:none" href="List" role="button">Refresh List</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -13,16 +27,26 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model) 
+    {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.RouteName)
+@*                <div class="container p-0" style="background-color:burlywood">
+                        
+                </div>*@
+
+                    @Html.DisplayFor(modelItem => item.RouteName)
+                
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.RouteId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.RouteId">Delete</a>
+                <div class="row" >
+                    <div class="d-flex justify-content-end">
+                        <a class="btn btn-info   m-1" style="text-decoration:none" href="Details/@item.RouteId" role="button">Details</a>
+                        <a class="btn btn-danger m-1" style="text-decoration:none" href="Delete/@item.RouteId" role="button">Delete</a>
+                    </div>
+                </div>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
