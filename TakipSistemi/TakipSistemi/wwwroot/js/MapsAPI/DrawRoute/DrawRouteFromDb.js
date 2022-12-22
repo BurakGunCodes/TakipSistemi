@@ -26,13 +26,14 @@ function initMap() {
 // icona tıkladındıgı zaman bilgi ekranı acılacak
 // konum vs bilgiler olacak
 
+
 function DrawRoute(CoordinateList) {
 
     initMap();
 
     var line = new google.maps.Polyline({
         path: CoordinateList,
-        center: { lat: CoordinateList[0].lng, lng: CoordinateList[0].lat }, // orta nokta olsun diye Konya lokasyonu
+        center: { lat: CoordinateList[0].lat, lng: CoordinateList[0].lng }, // orta nokta olsun diye Konya lokasyonu
         //strokeColor: randomColor,
         strokeOpacity: 1.0,
         strokeWeight: 5,
@@ -40,6 +41,19 @@ function DrawRoute(CoordinateList) {
         map: RouteMap
     });
 
+    var i = 0;
+    let myTimer = setInterval(function () {
+        HideMarkers(RouteMap);
+        DeleteMarkers();
+        AddMarker(RouteMap, { lat: CoordinateList[i].lat, lng: CoordinateList[i].lng }, "bus", "BUS");
+        ShowMarkers(RouteMap);
+        i++;
+        console.log("i:", i);
+        console.log("length:", CoordinateList.length );
+        if (i >= CoordinateList.length) {
+            clearInterval(myTimer);
+        }
+    }, 1000);
 
 }
 

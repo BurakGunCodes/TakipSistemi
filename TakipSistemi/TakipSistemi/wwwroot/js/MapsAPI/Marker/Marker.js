@@ -13,9 +13,9 @@ function AddMarker(Map, Coordinates, Icon, Title) {
 }
 
 // Sets the map on all markers in the array.
-function setMapOnAll(map) {
+function setMapOnAll(Map) {
     for (let i = 0; i < markers.length; i++) {
-        markers[i].setMap(map);
+        markers[i].setMap(Map);
     }
 }
 
@@ -25,8 +25,8 @@ function HideMarkers() {
 }
 
 // Shows any markers currently in the array.
-function ShowMarkers() {
-    setMapOnAll(map);
+function ShowMarkers(Map) {
+    setMapOnAll(Map);
 }
 
 // Deletes all markers in the array by removing references to them.

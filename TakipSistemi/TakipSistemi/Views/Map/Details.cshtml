@@ -60,7 +60,7 @@
                 let coordinate={ lat: parseFloat( response[i].lat), lng: parseFloat(response[i].lng)};
                 coordinates.push(coordinate);
                 document.getElementById("DetailsLog").innerHTML += "Lat: " + response[i].lat + "\n" + "Lng: " + response[i].lng + "\n" + "\n";
-                }
+            }
            
             DrawRoute(coordinates);
 
