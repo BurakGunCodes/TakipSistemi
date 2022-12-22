@@ -20,12 +20,14 @@
     </div>
 
 
-
+    <script type="text/javascript" src="~/js/mapsapi/findme/findme.js"></script>
 <div>
      <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="List" role="button">Back to List</a>
      <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Create" role="button">Back to Main Menu</a>
 
      <a class="btn btn-success   m-1" style="text-decoration:none" asp-controller="Map" asp-action="" role="button">Online Tracking</a>
+        <button id="FindMeBtn" class="btn btn-success" onclick="FindMe()">Where Am I?</button>
+ 
 </div>
 
 
@@ -38,6 +40,8 @@
     <script type="text/javascript" src="~/js/mapsapi/drawroute/drawroutefromdb.js"></script>
     
     <script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
+
+    
 
 <script  type="text/javascript">
 
@@ -68,7 +72,14 @@
             alert(response.responseText);
         }
     });
+
+
      
 </script>
 
-
+    <script type="text/javascript" >
+        $(document).ready(function () {
+           // document.getElementById("FindMeBtn").addEventListener("click", FindMe());
+        });
+        
+</script>
