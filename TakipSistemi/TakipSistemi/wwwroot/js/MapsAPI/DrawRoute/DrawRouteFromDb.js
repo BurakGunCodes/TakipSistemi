@@ -46,6 +46,8 @@ function DrawRoute(CoordinateList) {
         HideMarkers(RouteMap);
         DeleteMarkers();
         AddMarker(RouteMap, { lat: CoordinateList[i].lat, lng: CoordinateList[i].lng }, "bus", "BUS");
+        RouteMap.setCenter({ lat: CoordinateList[i].lat, lng: CoordinateList[i].lng });
+        RouteMap.setZoom(20);
         ShowMarkers(RouteMap);
         i++;
         console.log("i:", i);
