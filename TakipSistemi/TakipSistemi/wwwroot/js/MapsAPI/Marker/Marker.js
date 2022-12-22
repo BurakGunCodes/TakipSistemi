@@ -10,6 +10,7 @@ function AddMarker(Map, Coordinates, Icon, Title) {
     });
 
     markers.push(marker); 
+    return marker;
 }
 
 // Sets the map on all markers in the array.
