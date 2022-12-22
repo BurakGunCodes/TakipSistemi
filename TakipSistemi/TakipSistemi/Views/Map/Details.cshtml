@@ -1,47 +1,45 @@
 ﻿@model List< TakipSistemi.Models.Entities.Coordinate>
+
+@*her bir kayıt için gelecek olan Route Id değeri*@
 @ViewData["id"]
-
-
-
-
-
 
 
 <div>
     <h4>Coordinate</h4>
     <hr />
 
+
     <div class="container">
         <div class="row">
-            <div class="col">
-                guzergah bilgisi eklenecek
-                
-            </div style>
-            <div class="col-lg-10" style="background-color:lightcyan">
-                <div id="DetailMap" style="height:700px;width:100%">div area</div>
+            <div id="DetailMap" class="col-9" style="height:800px;">
             </div>
-
+            <div class="col-3">
+                <textarea id="DetailsLog" readonly style="resize:none;min-width:50px; max-width:100%;min-height:50px;height:100%;width:100%;" class="form-control"  name="textname"></textarea>
+            </div>
         </div>
     </div>
-</div>
 
 
 
 <div>
-    <a asp-action="List">Back to List</a>
-    <a asp-action="Create">Back to Main Menu</a>
+     <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="List" role="button">Back to List</a>
+     <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Create" role="button">Back to Main Menu</a>
+
+     <a class="btn btn-success   m-1" style="text-decoration:none" asp-controller="Map" asp-action="" role="button">Online Tracking</a>
 </div>
 
 
 
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
+    
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
     <script type="text/javascript" src="~/js/mapsapi/drawroute/drawroutefromdb.js"></script>
+    
     <script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script type="text/javascript">
+<script  type="text/javascript">
 
     var  coordinates = [];
     var id  = @ViewData["id"]; // details basıldıgı zaman alacagı deger
@@ -57,7 +55,9 @@
             {
                 let coordinate={ lat: parseFloat( response[i].lat), lng: parseFloat(response[i].lng)};
                 coordinates.push(coordinate);
-            }
+                document.getElementById("DetailsLog").innerHTML += "Lat: " + response[i].lat + "\n" + "Lng: " + response[i].lng + "\n" + "\n";
+                }
+           
             DrawRoute(coordinates);
 
         },

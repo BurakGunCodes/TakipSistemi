@@ -12,7 +12,7 @@ const MapCoordinateList = [];
 
 function DrawLine(map, x, y) {
 
-    console.log(x,y);
+    console.log("polyline.js drawline",x,y);
     var MapCoordinateCreate = { lat: x, lng: y };
 
     MapCoordinateList.push({ lat: x, lng: y } );
@@ -41,11 +41,13 @@ function DrawLine(map, x, y) {
 
     line.setMap(map);
 
+    
 
     if (MapCoordinateList.length <= 1) {
         AddMarker(map, { lat: x, lng: y }, "", "Start");
     }
 
+    document.getElementById("CreateLog").innerHTML += "Lat: " + x + "\n" + "Lng: " + y + "\n" + "\n";
 }
 
 
@@ -76,20 +78,7 @@ function DrawLine(map, x, y) {
 
 function Undo() {
 
-
-    //locX.pop();
-    //locY.pop();
-
-
-    //HideMarkers();
-    //markers.pop();
-    //ShowMarkers();
-
-    //line.setMap(null);
-    //MapCoordinateList.pop();
-
-    //(line.setMap(null);
-
+    document.getElementById("CreateLog").innerHTML = " ";
 
     const i = lines.length;
 

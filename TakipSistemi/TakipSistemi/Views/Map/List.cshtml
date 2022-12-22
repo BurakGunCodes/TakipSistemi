@@ -4,12 +4,12 @@
     <div class="row">
         <div class="col-sm" style="background-color:antiquewhite">
             <p>
-                <a class="btn btn-info   m-1" style="text-decoration:none" href="Create" role="button">Create New</a>
+                <a class="btn btn-info btn-lg   m-1" style="text-decoration:none; background-color:red" href="Create" role="button">Create New</a>
             </p>
         </div>
         <div class="col-sm" style="background-color:antiquewhite">
             <p class="d-flex justify-content-end" >
-                <a class="btn btn-info   m-1" style="text-decoration:none" href="List" role="button">Refresh List</a>
+                <a class="btn btn-info   btn-lg m-1" style="text-decoration:none" href="List" role="button">Refresh List</a>
             </p>
         </div>
 
@@ -31,20 +31,18 @@
     {
         <tr>
             <td>
-@*                <div class="container p-0" style="background-color:burlywood">
-                        
-                </div>*@
-
+                <div class="container p-0" style="background-color:burlywood">
                     @Html.DisplayFor(modelItem => item.RouteName)
-                
+                </div>    
             </td>
             <td>
                 <div class="row" >
                     <div class="d-flex justify-content-end">
-                        <a class="btn btn-info   m-1" style="text-decoration:none" href="Details/@item.RouteId" role="button">Details</a>
-                        <a class="btn btn-danger m-1" style="text-decoration:none" href="Delete/@item.RouteId" role="button">Delete</a>
+                        <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Details" asp-route-id="@item.RouteId" role="button">Details</a>
+                        <a class="btn btn-danger   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Delete" asp-route-id="@item.RouteId" role="button">Delete</a>
                     </div>
                 </div>
+
             </td>
         </tr>
     }
