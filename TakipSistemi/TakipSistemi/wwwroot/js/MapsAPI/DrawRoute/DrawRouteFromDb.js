@@ -41,21 +41,38 @@ function DrawRoute(CoordinateList) {
         map: RouteMap
     });
 
+
+    const marker = new google.maps.Marker({
+        position: { lat:CoordinateList[0].lat, lng:CoordinateList[0].lng },
+        map: RouteMap,
+        title: "29D",
+        icon: SelectIcon("bus"),
+    });
+
+
     var i = 0;
+    //AddMarker(RouteMap, { lat: CoordinateList[i].lat, lng: CoordinateList[i].lng }, "bus", "BUS");
     let myTimer = setInterval(function () {
-        HideMarkers(RouteMap);
-        DeleteMarkers();
-        AddMarker(RouteMap, { lat: CoordinateList[i].lat, lng: CoordinateList[i].lng }, "bus", "BUS");
+        //HideMarkers(RouteMap);
+        //DeleteMarkers();
+        var new_marker_position = new google.maps.LatLng(CoordinateList[i].lat, CoordinateList[i].lng);
+
+        marker.setPosition(new_marker_position);
+
+       
+        
+        //DeleteMarkers();
+        
         RouteMap.setCenter({ lat: CoordinateList[i].lat, lng: CoordinateList[i].lng });
-        RouteMap.setZoom(20);
-        ShowMarkers(RouteMap);
+        RouteMap.setZoom(16);
+        setMapOnAll(Map);
+        //ShowMarkers(RouteMap);
         i++;
         console.log("i:", i);
         console.log("length:", CoordinateList.length );
         if (i >= CoordinateList.length) {
             clearInterval(myTimer);
         }
-    }, 1000);
+    }, 100);
 
 }
-

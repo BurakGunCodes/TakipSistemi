@@ -82,3 +82,8 @@ function GetInfoWindow(map, marker) {
         });
     });
 }
+
+function changeMarkerPosition(marker, Lat, Lng) {
+    var latlng = new google.maps.LatLng(Lat, Lng);
+    marker.setPosition(latlng);
+}
