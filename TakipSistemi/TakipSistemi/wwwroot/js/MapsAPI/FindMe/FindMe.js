@@ -8,7 +8,9 @@
 
 let infoWindow;
 
-function FindMe() {
+function FindMe(mapName) {
+
+    const _mapName = mapName;
 
     infoWindow = new google.maps.InfoWindow();
     //RouteMap: Benim kendi haritamın ismi
@@ -24,17 +26,17 @@ function FindMe() {
                    
                     infoWindow.setPosition(pos);
                     infoWindow.setContent("You are Here!");
-                    infoWindow.open(RouteMap);
-                    RouteMap.setCenter(pos);
-                    RouteMap.setZoom(16); // Zoom level 0-to-24
+                    infoWindow.open(_mapName);
+                    _mapName.setCenter(pos);
+                    _mapName.setZoom(16); // Zoom level 0-to-24
                 },
                 () => {
-                    handleLocationError(true, infoWindow, RouteMap.getCenter());
+                    handleLocationError(true, infoWindow, _mapName.getCenter());
                 }
             );
         } else {
             // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, RouteMap.getCenter());
+            handleLocationError(false, infoWindow, _mapName.getCenter());
         }
   
 }
@@ -46,5 +48,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
             ? "Error: The Geolocation service failed."
             : "Error: Your browser doesn't support geolocation."
     );
-    infoWindow.open(RouteMap);
+    infoWindow.open(_mapName);
 }

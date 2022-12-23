@@ -1,7 +1,7 @@
 ﻿
 var line = [];
 var lines = [];
-
+var ActiveTrackingState = 1;
 
 
 //var randomColor;
@@ -20,6 +20,15 @@ function initMap() {
     }
 
     RouteMap = new google.maps.Map(document.getElementById('DetailMap'), MapOptions);
+
+    RouteMap.addListener('drag', function (event) {
+        ActiveTrackingState = 0;
+    });
+
+    //google.maps.event.addListener(RouteMap, 'drag' , function (event) {
+    //    ActiveTrackingState = 0;
+    //});
+
 }
 
 // baslangıc ver bitis noktalarına icon koyulacak
@@ -33,7 +42,7 @@ function DrawRoute(CoordinateList) {
 
     var line = new google.maps.Polyline({
         path: CoordinateList,
-        center: { lat: CoordinateList[0].lat, lng: CoordinateList[0].lng }, // orta nokta olsun diye Konya lokasyonu
+        center: { lat: CoordinateList[0].lat, lng: CoordinateList[0].lng }, 
         strokeColor: "#FF0000",
         strokeOpacity: 1.0,
         strokeWeight: 5,
@@ -57,17 +66,34 @@ function DrawRoute(CoordinateList) {
 
         marker.setPosition(new_marker_position);
         
-        RouteMap.setCenter({ lat: CoordinateList[i].lat, lng: CoordinateList[i].lng });
-        RouteMap.setZoom(16); // SetZoom ayarlandıgında aracı takip ederken başka alana yakınlaştırma yapılamıyor
+        //RouteMap.setCenter({ lat: CoordinateList[i].lat, lng: CoordinateList[i].lng });
+        //RouteMap.setZoom(16); // SetZoom ayarlandıgında aracı takip ederken başka alana yakınlaştırma yapılamıyor
         //setMapOnAll(Map);
         //ShowMarkers(RouteMap);
+        if (ActiveTrackingState) {
+            ActiveTracking(RouteMap, { lat: CoordinateList[i].lat, lng: CoordinateList[i].lng }, 16);
+        }
         i++;
         console.log("i:", i);
         console.log("length:", CoordinateList.length );
         if (i >= CoordinateList.length) {
-            //i = 0; --> döngü olarak devam etmesi için
-            clearInterval(myTimer);
+            i = 0; //--> döngü olarak devam etmesi için
+            //clearInterval(myTimer);
         }
-    }, 100);
+    }, 1000);
 
+}
+
+function EnableActiveTracking() {
+    ActiveTrackingState = 1;
+}
+
+function DisableActiveTracking() {
+    ActiveTrackingState = 0;
+}
+
+function ActiveTracking(map, coordinate, zoom) {
+
+    map.setCenter(coordinate);
+    map.setZoom(zoom); // SetZoom ayarlandıgında aracı takip ederken başka alana yakınlaştırma yapılamıyor
 }

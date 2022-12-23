@@ -1,6 +1,7 @@
 ﻿@model TakipSistemi.Models.Maps.Location
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
-    <script defer type="text/javascript" src="~/js/mapsapi/init/init.js"></script>
-    <script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
-    <script type="text/javascript" src="~/js/mapsapi/polyline/polyline.js"></script>
- 
 </head>
 
 <body>
+
     <div class="container">
         <div class="row">
             <div id="map" class="col-9" style="height:800px;"> Google Maps Div Area</div>
@@ -27,19 +23,30 @@
         </div>
     </div>
 
+    @*// &callback=initMap kaldırıldı ve en alta script içerisine  initMap(); olarak yazıldı.*@
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E"></script>
 
-    <div>
-        @*<input onclick="MyLogScript()" type="button" name="btn" value="Log"></input>*@
-        @* <input onclick="DrawRoute()" type="button" name="DrafDB" value="DrawRoute"></input>*@
-        @*<input onclick="Log()" type="button" name="" value="Log"></input>*@
-        
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="~/js/mapsapi/init/init.js"></script>
+
+    <script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
+
+    <script type="text/javascript" src="~/js/mapsapi/polyline/polyline.js"></script>
+
+    <script type="text/javascript" src="~/js/mapsapi/findme/findme.js"></script>
+
+    <script>
+        initMap();
+    </script>
+
+    <div>      
         <input onclick="ShowMarkers()" type="button" name="" value="Show Markers"></input>
         <input onclick="HideMarkers()" type="button" name="" value="Hide Markers"></input>
         <input onclick="DeleteMarkers()" type="button" name="" value="Delete Markers"></input>
-       
-
-
+        <button id="CreateFindMeBtn" class="btn btn-success" onclick="FindMe(map)">Where Am I?</button>
     </div>
+
 
     <div class="form-control">
         <div class="row" style="background-color:aquamarine">
