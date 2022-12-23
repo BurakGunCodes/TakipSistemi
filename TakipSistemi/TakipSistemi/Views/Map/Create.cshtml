@@ -40,10 +40,10 @@
         initMap();
     </script>
 
-    <div>      
-        <input onclick="ShowMarkers()" type="button" name="" value="Show Markers"></input>
+    <div class="form-control">      
+@*        <input onclick="ShowMarkers()" type="button" name="" value="Show Markers"></input>
         <input onclick="HideMarkers()" type="button" name="" value="Hide Markers"></input>
-        <input onclick="DeleteMarkers()" type="button" name="" value="Delete Markers"></input>
+        <input onclick="DeleteMarkers()" type="button" name="" value="Delete Markers"></input>*@
         <button id="CreateFindMeBtn" class="btn btn-success" onclick="FindMe(map)">Where Am I?</button>
     </div>
 
@@ -51,8 +51,7 @@
     <div class="form-control">
         <div class="row" style="background-color:aquamarine">
             <div class="col-lg-3 col-md-6 col-sm-12">
-
-                <label for"RouteName">Enter Route Name</label>
+                <label for"RouteName">Enter Route Name:</label>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <input type="text" placeholder="Route Name" id="RouteName" required> </input>
@@ -70,7 +69,7 @@
 
     <div class="row">
         <div class="col-2">
-            <a class="btn btn-info" style="text-decoration:none;background-color:orange" asp-controller="Map" asp-action="List" role="button">Go to List</a>
+            <a class="btn btn-info" style="text-decoration:none;background-color:lightgray" asp-controller="Map" asp-action="List" role="button">See Routes</a>
         </div>
     </div>
 

@@ -21,13 +21,9 @@ function initMap() {
 
     RouteMap = new google.maps.Map(document.getElementById('DetailMap'), MapOptions);
 
-    RouteMap.addListener('drag', function (event) {
+    RouteMap.addListener('drag', function () {
         ActiveTrackingState = 0;
     });
-
-    //google.maps.event.addListener(RouteMap, 'drag' , function (event) {
-    //    ActiveTrackingState = 0;
-    //});
 
 }
 

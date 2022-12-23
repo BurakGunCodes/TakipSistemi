@@ -1,19 +1,33 @@
 ﻿@model IEnumerable<TakipSistemi.Models.Entities.RoadRoute>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm" style="background-color:antiquewhite">
-            <p>
-                <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Create" role="button">New Route</a>
+
+
+
+<div class="container ">
+    <div class="row" style="background-color:antiquewhite">
+
+@*        <div class="col" style="background-color:antiquewhite">
+            <p class="d-flex justify-content-left">
+                <a class="btn btn-info   btn-lg m-1" style="text-decoration:none" asp-controller="Map" asp-action="Create" role="button">New Route</a>
             </p>
-        </div>
-        <div class="col-sm" style="background-color:antiquewhite">
-           
-            <p class="d-flex justify-content-end" >
-                <a class="btn btn-info   btn-lg m-1" style="text-decoration:none" href="List" role="button">Refresh List</a>
-            </p>
+        </div>*@
+
+        <div class="col" >
+            <div class="d-flex flex-row bd-highlight" >
+                <div class="p-2 bd-highlight" >
+                    <a class="btn btn-info btn-lg m-1" style="text-decoration:none;" asp-controller="Map" asp-action="Create" role="button">New Route</a>
+                </div>
+            </div>
         </div>
 
+        <div class="col" >
+            <div class="d-flex flex-row-reverse bd-highlight" >
+                <div class="p-2 bd-highlight" >
+                    <a class="btn btn-info btn-lg m-1" style="text-decoration:none" asp-controller="Map" asp-action="List" role="button">Refresh List</a>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
 
@@ -32,15 +46,13 @@
     {
         <tr>
             <td>
-                <div class="container p-0" style="background-color:burlywood">
-                    @Html.DisplayFor(modelItem => item.RouteName)
-                </div>    
+                <h4> @Html.DisplayFor(modelItem => item.RouteName) </h4>
             </td>
             <td>
                 <div class="row" >
                     <div class="d-flex justify-content-end">
-                        <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Details" asp-route-id="@item.RouteId" role="button">Details</a>
-                        <a class="btn btn-danger   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Delete" asp-route-id="@item.RouteId" role="button">Delete</a>
+                        <a role="button" class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Details" asp-route-id="@item.RouteId">Details</a>
+                        <a role="button" class="btn btn-danger   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Delete" asp-route-id="@item.RouteId">Delete</a>
                     </div>
                 </div>
 
