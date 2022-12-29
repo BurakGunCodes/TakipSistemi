@@ -10,7 +10,7 @@ using TakipSistemi.Models;
 
 namespace TakipSistemi.Migrations
 {
-    [DbContext(typeof(SystemDbContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20221212132047_Route_Coordinate_Table_Added")]
     partial class RouteCoordinateTableAdded
     {

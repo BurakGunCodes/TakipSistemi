@@ -14,56 +14,57 @@
             <div id="DetailMap" class="col-9" style="height:800px;">
             </div>
             <div class="col-3">
-                <textarea id="DetailsLog" readonly style="resize:none;min-width:50px; max-width:100%;min-height:50px;height:100%;width:100%;" class="form-control"  name="textname"></textarea>
+                <textarea id="DetailsLog" readonly style="resize:none;min-width:50px; max-width:100%;min-height:50px;height:100%;width:100%;" class="form-control" name="textname"></textarea>
             </div>
         </div>
     </div>
 </div>
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="~/js/mapsapi/drawroute/drawroutefromdb.js"></script>
-    <script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
-    <script type="text/javascript" src="~/js/mapsapi/findme/findme.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9VhhFBSrb-1GjySwh7QhJBuD7HKFqq7E&callback=initMap"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/mapsapi/drawroute/drawroutefromdb.js"></script>
+<script type="text/javascript" src="~/js/mapsapi/marker/marker.js"></script>
+<script type="text/javascript" src="~/js/mapsapi/findme/findme.js"></script>
 
 <div>
-     <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="List" role="button">Back to List</a>
-     <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Create" role="button">Back to Main Menu</a>
+    <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="List" role="button">Back to List</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Admin"))
+        {
+            <a class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Create" role="button">Back to Main Menu</a>
+        }
+
+    }
 
 
-     @*//Detaylar sayfasında bulunan, tıklandığı zaman kullanıcının konumuna giden buton*@
+
+    @*//Detaylar sayfasında bulunan, tıklandığı zaman kullanıcının konumuna giden buton*@
     <button id="ActiveTrackingBtn" class="btn btn-success" onclick="EnableActiveTracking()">Active Tracking</button>
 
     <button id="FindMeBtn" class="btn btn-success" onclick="FindMe(RouteMap)">Where Am I?</button>
 </div>
 
 
+<script type="text/javascript">
 
-    
+    var coordinates = [];
+    var id = @ViewData["id"]; // details basıldıgı zaman alacagı deger
 
-
-    
-
-<script  type="text/javascript">
-
-    var  coordinates = [];
-    var id  = @ViewData["id"]; // details basıldıgı zaman alacagı deger
- 
     // fonksiyon cagirildi an verileri al
     $.ajax({
         type: "POST",
         url: "/Map/GetCoordinate",
-        data: { id : id },
+        data: { id: id },
         success: function (response) {
 
-            for(i=0;i<response.length;i++)
-            {
-                let coordinate={ lat: parseFloat( response[i].lat), lng: parseFloat(response[i].lng)};
+            for (i = 0; i < response.length; i++) {
+                let coordinate = { lat: parseFloat(response[i].lat), lng: parseFloat(response[i].lng) };
                 coordinates.push(coordinate);
                 document.getElementById("DetailsLog").innerHTML += "Lat: " + response[i].lat + "\n" + "Lng: " + response[i].lng + "\n" + "\n";
             }
-           
+
             DrawRoute(coordinates);
 
         },
@@ -76,7 +77,7 @@
     });
 
 
-     
+
 </script>
 
 

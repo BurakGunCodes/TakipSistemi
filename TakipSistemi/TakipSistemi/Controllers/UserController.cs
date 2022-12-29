@@ -1,54 +1,60 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
+using System.Drawing;
 using TakipSistemi.Models;
-using TakipSistemi.Models.Entities;
-using TakipSistemi.Models.ModelDtos;
 
 namespace TakipSistemi.Controllers
 {
     public class UserController : Controller
     {
-        SystemDbContext _context = new SystemDbContext();
+        private readonly RoleManager<AppRole> _roleManager;
 
-
-        [HttpGet]
-        public IActionResult UserCreate()
+        public UserController(RoleManager<AppRole> roleManager)
         {
 
-            UserDataCreate userDataCreate = new UserDataCreate();
+            _roleManager = roleManager;
 
-            
-
-
-           return View(userDataCreate);
         }
 
-        [HttpPost]
-        public IActionResult UserCreate(UserDataCreate userDataCreate)
+
+        public IActionResult Index()
         {
 
-            if (ModelState.IsValid)
+            return View();
+        }
+
+        // Sistem ilk calistirildinda User ve Admin adında iki rol tanımla
+        public async Task<IActionResult> CreateRoleAsync()
+        {
+
+            int id1 = 1;
+            int id2 = 2;
+
+            AppRole role1 = await _roleManager.FindByIdAsync(id1.ToString());
+            AppRole role2 = await _roleManager.FindByIdAsync(id2.ToString());
+
+            if(role1 == null)
             {
-                if(userDataCreate.Password == userDataCreate.ConfirmPassword)
-                {
-                    //userDataCreate i User Dataya donuştür;
-
-                    UserData userData = new UserData()
-                    {
-                        Birthdate = userDataCreate.Birthdate,
-                        EmailAddr = userDataCreate.EmailAddr,
-                        Gender = userDataCreate.Gender,
-                        Name = userDataCreate.Name,
-                        Password = userDataCreate.Password,
-                        Surname = userDataCreate.Surname                     
-                    };
-
-                    _context.Users.Add(userData);
-
-                int sonuc=    _context.SaveChanges();
-                }
-
+                IdentityResult roleResult1 = await _roleManager.CreateAsync(new AppRole { Id = "1", Name = "Admin" });
             }
-                return View();
+
+            if (role2 == null)
+            {
+                IdentityResult roleResult2 = await _roleManager.CreateAsync(new AppRole { Id = "2", Name = "User" });
+            }
+
+
+            return RedirectToAction("List","Map");
+            //return View();
         }
-    }
+
+        public IActionResult List()
+        {
+            return View();
+        }
+
+
+
+    }   
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj": {}
+    "G:\\TakipSistemiTest\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj": {}
   },
   "projects": {
-    "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj": {
+    "G:\\TakipSistemiTest\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
+        "projectUniqueName": "G:\\TakipSistemiTest\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
         "projectName": "TakipSistemi",
-        "projectPath": "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
-        "packagesPath": "C:\\Users\\BGUN\\.nuget\\packages\\",
-        "outputPath": "F:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\obj\\",
+        "projectPath": "G:\\TakipSistemiTest\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
+        "packagesPath": "C:\\Users\\burak\\.nuget\\packages\\",
+        "outputPath": "G:\\TakipSistemiTest\\TakipSistemi\\TakipSistemi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\BGUN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\burak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,13 +44,27 @@
               "target": "Package",
               "version": "[5.2.9, )"
             },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",

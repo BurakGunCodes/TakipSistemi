@@ -11,14 +11,21 @@
                 <a class="btn btn-info   btn-lg m-1" style="text-decoration:none" asp-controller="Map" asp-action="Create" role="button">New Route</a>
             </p>
         </div>*@
-
-        <div class="col" >
-            <div class="d-flex flex-row bd-highlight" >
-                <div class="p-2 bd-highlight" >
-                    <a class="btn btn-info btn-lg m-1" style="text-decoration:none;" asp-controller="Map" asp-action="Create" role="button">New Route</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (User.IsInRole("Admin"))
+            {
+                <div class="col" >
+                    <div class="d-flex flex-row bd-highlight" >
+                        <div class="p-2 bd-highlight" >
+                            <a class="btn btn-info btn-lg m-1" style="text-decoration:none;" asp-controller="Map" asp-action="Create" role="button">New Route</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            }
+
+        }
+
 
         <div class="col" >
             <div class="d-flex flex-row-reverse bd-highlight" >
@@ -52,7 +59,14 @@
                 <div class="row" >
                     <div class="d-flex justify-content-end">
                         <a role="button" class="btn btn-info   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Details" asp-route-id="@item.RouteId">Details</a>
-                        <a role="button" class="btn btn-danger   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Delete" asp-route-id="@item.RouteId">Delete</a>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Admin"))
+                                {
+                                    <a role="button" class="btn btn-danger   m-1" style="text-decoration:none" asp-controller="Map" asp-action="Delete" asp-route-id="@item.RouteId">Delete</a>
+                                }
+
+                            }
                     </div>
                 </div>
 

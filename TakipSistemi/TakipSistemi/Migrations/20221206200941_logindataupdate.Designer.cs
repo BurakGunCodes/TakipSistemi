@@ -10,7 +10,7 @@ using TakipSistemi.Models;
 
 namespace TakipSistemi.Migrations
 {
-    [DbContext(typeof(SystemDbContext))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20221206200941_logindataupdate")]
     partial class logindataupdate
     {

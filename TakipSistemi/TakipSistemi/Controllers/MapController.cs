@@ -5,15 +5,24 @@ using TakipSistemi.Models;
 using TakipSistemi.Models.Entities;
 using TakipSistemi.Models.ModelDtos.MapDtos;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+
 namespace TakipSistemi.Controllers
 {
+    [Authorize]
     public class MapController : Controller
     {
-        SystemDbContext _context = new SystemDbContext();
+        private readonly AppDbContext _context;
+
+        public MapController(AppDbContext _context)
+        {
+            this._context = _context;
+        }
 
         // Dil Tercihi Eklenecek(Tr-Eng)
         // Indentity Eklenecek
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -54,14 +63,17 @@ namespace TakipSistemi.Controllers
 
             return Json(coordinates);
         }
-        
 
+        [Authorize(Roles = "Admin,User")]
         public IActionResult List()
         {
+
+
             var result = _context.Routes.Where(x => x.RouteId > 0).ToList();
             return View(result);
         }
 
+        [Authorize(Roles = "Admin,User")]
         public IActionResult Details(int id)
         {
             //route id
@@ -70,6 +82,7 @@ namespace TakipSistemi.Controllers
             return View(result);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             // route id
