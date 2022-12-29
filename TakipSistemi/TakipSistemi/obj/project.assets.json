@@ -11657,11 +11657,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\TakipSistemiTest\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
+      "projectUniqueName": "G:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
       "projectName": "TakipSistemi",
-      "projectPath": "G:\\TakipSistemiTest\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
+      "projectPath": "G:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
       "packagesPath": "C:\\Users\\burak\\.nuget\\packages\\",
-      "outputPath": "G:\\TakipSistemiTest\\TakipSistemi\\TakipSistemi\\obj\\",
+      "outputPath": "G:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\burak\\AppData\\Roaming\\NuGet\\NuGet.Config",

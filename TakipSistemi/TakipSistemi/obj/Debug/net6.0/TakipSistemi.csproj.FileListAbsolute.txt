@@ -1194,3 +1194,4 @@ G:\TakipSistemiTest\TakipSistemi\TakipSistemi\obj\Debug\net6.0\TakipSistemi.pdb
 G:\TakipSistemiTest\TakipSistemi\TakipSistemi\obj\Debug\net6.0\TakipSistemi.genruntimeconfig.cache
 G:\TakipSistemiTest\TakipSistemi\TakipSistemi\obj\Debug\net6.0\ref\TakipSistemi.dll
 G:\TakipSistemiTest\TakipSistemi\TakipSistemi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+G:\TakipSistemi\TakipSistemi\TakipSistemi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.Design.dll

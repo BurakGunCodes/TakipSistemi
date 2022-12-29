@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6nxt7alTsmSSSqBx2HI25QC0B7f3univVZvy4m24Q2o+F2Gnw0YAn+cOap9/QAh8Cp3j96PKykFSgNhHrvjeGg==",
+  "dgSpecHash": "b534ftnlLvkaaBHI/AOG4gMUYMQsBRYvoW7JVtBCISQwbuVNS+bQg7Qa9jtXbeIVV6neH4KWdWZ2nZR5DfI7QA==",
   "success": true,
-  "projectFilePath": "G:\\TakipSistemiTest\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
+  "projectFilePath": "G:\\TakipSistemi\\TakipSistemi\\TakipSistemi\\TakipSistemi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\burak\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\burak\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

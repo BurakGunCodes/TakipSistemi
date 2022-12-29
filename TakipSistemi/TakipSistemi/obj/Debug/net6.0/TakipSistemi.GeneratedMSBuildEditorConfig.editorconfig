@@ -9,101 +9,105 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TakipSistemi
 build_property.RootNamespace = TakipSistemi
-build_property.ProjectDir = G:\TakipSistemiTest\TakipSistemi\TakipSistemi\
+build_property.ProjectDir = G:\TakipSistemi\TakipSistemi\TakipSistemi\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = G:\TakipSistemiTest\TakipSistemi\TakipSistemi
+build_property.MSBuildProjectDirectory = G:\TakipSistemi\TakipSistemi\TakipSistemi
 build_property._RazorSourceGeneratorDebug = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Areas/Identity/Pages/Account/Login.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Areas/Identity/Pages/Account/Logout.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Areas/Identity/Pages/Account/Register.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Areas/Identity/Pages/_ViewImports.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Areas/Identity/Pages/_ViewStart.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Map/Create.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Map/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Map/Delete.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Map/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Map/Details.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Map/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Map/Draw.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Map/Draw.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXERyYXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Map/DrawMap.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Map/DrawMap.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXERyYXdNYXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Map/FindMe.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Map/FindMe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXEZpbmRNZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Map/GetCoordinates.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Map/GetCoordinates.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXEdldENvb3JkaW5hdGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Map/List.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Map/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Shared/Components/DrawRouteOnMap/Default.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Shared/Components/DrawRouteOnMap/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRHJhd1JvdXRlT25NYXBcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Shared/Error.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Shared/_LoginPartial.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Shared/_ValidationScriptsPartial.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/User/CreateRole.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/User/CreateRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGVSb2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/_ViewImports.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/User/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/_ViewStart.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/TakipSistemiTest/TakipSistemi/TakipSistemi/Views/Shared/_Layout.cshtml]
+[G:/TakipSistemi/TakipSistemi/TakipSistemi/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-0yirhny5d8

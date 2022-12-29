@@ -135,9 +135,6 @@ namespace TakipSistemi.Areas.Identity.Pages.Account
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-                    //IdentityResult roleResult;
-                    //roleResult = await _roleManager.CreateAsync(new IdentityRole("Admin"));
-                    //roleResult = await _roleManager.CreateAsync(new AppRole { Id = "3", Name = "SuperBurak" });
                     if(Input.Email == "burakgun532@gmail.com")
                     {
                         await _userManager.AddToRoleAsync(user, "Admin");
@@ -147,7 +144,7 @@ namespace TakipSistemi.Areas.Identity.Pages.Account
                         await _userManager.AddToRoleAsync(user, "User");
 
                     }
-                    //await _userManager.AddToRoleAsync(user, roleResult);
+ 
 
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",

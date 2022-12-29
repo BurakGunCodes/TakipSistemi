@@ -9,12 +9,14 @@ namespace TakipSistemi.Controllers
     public class UserController : Controller
     {
         private readonly RoleManager<AppRole> _roleManager;
+        private readonly UserManager<AppUser> _userManager;
 
-        public UserController(RoleManager<AppRole> roleManager)
+        public UserController(RoleManager<AppRole> roleManager, 
+            UserManager<AppUser> userManager)
         {
 
             _roleManager = roleManager;
-
+            _userManager = userManager;
         }
 
 
@@ -46,12 +48,15 @@ namespace TakipSistemi.Controllers
 
 
             return RedirectToAction("List","Map");
-            //return View();
         }
 
         public IActionResult List()
         {
-            return View();
+            
+            var users = _userManager.Users;
+           // var roles = _roleManager.GetRoleNameAsync 
+
+            return View(users);
         }
 
 
