@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using TakipSistemi.Models
+
+@inject SignInManager<AppUser> signInManager
+@inject UserManager<AppUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en" >
 <head>
     <meta charset="utf-8" />
@@ -29,10 +35,13 @@
                                 </li>
                             }
                         }
+
                     </ul>
+
                     <partial name="_LoginPartial" />
                 </div>
             </div>
+
         </nav>
     </header>
     <div class="container">
