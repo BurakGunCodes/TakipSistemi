@@ -19,8 +19,6 @@ namespace TakipSistemi.Controllers
             this._context = _context;
         }
 
-        // Dil Tercihi Eklenecek(Tr-Eng)
-        // Indentity Eklenecek
 
         [Authorize(Roles = "Admin")]
         public IActionResult Create()

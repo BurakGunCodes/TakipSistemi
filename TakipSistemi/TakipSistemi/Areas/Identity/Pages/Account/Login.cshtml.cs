@@ -122,7 +122,7 @@ namespace TakipSistemi.Areas.Identity.Pages.Account
                     claims.Add(new Claim("Email", Input.Email));
                     claims.Add(new Claim("Password", Input.Password));
                     claims.Add(new Claim(ClaimTypes.Name, Input.Email));
-                    if (Input.Email == "burakgun532@gmail.com" && Input.Password == "Burak.123")
+                    if (Input.Email == "Y225012002@gmail.com" && Input.Password == "sau")
                     {
                         claims.Add(new Claim(ClaimTypes.Role, "Admin"));
                     }else{

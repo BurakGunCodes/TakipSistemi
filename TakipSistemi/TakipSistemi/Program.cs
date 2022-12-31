@@ -16,14 +16,23 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //    {
 //        options.SignIn.RequireConfirmedAccount = false;
 //        options.Password.RequireDigit = false;
-//        options.Password.RequiredLength = 6;
+//        options.Password.RequiredLength = 3;
 //        options.Password.RequireNonAlphanumeric = false;
 //        options.Password.RequireUppercase = false;
 //        options.Password.RequireLowercase = false;
 //    })
 //.AddEntityFrameworkStores<AppDbContext>();
 
-builder.Services.AddIdentity<AppUser, AppRole>()
+builder.Services.AddIdentity<AppUser, AppRole>
+    (options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+        options.Password.RequireDigit = false;
+        options.Password.RequiredLength = 3;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireLowercase = false;
+    })
     .AddDefaultTokenProviders()
     .AddDefaultUI()
     .AddEntityFrameworkStores<AppDbContext>();

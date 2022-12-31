@@ -91,7 +91,7 @@ namespace TakipSistemi.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 3)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
@@ -135,7 +135,7 @@ namespace TakipSistemi.Areas.Identity.Pages.Account
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-                    if(Input.Email == "burakgun532@gmail.com")
+                    if(Input.Email == "Y225012002@ogr.sakarya.edu.tr")
                     {
                         await _userManager.AddToRoleAsync(user, "Admin");
                     }
