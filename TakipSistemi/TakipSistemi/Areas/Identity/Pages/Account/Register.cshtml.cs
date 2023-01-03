@@ -135,7 +135,7 @@ namespace TakipSistemi.Areas.Identity.Pages.Account
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
-                    if(Input.Email == "Y225012002@ogr.sakarya.edu.tr")
+                    if(Input.Email == "Y225012002@sakarya.edu.tr")
                     {
                         await _userManager.AddToRoleAsync(user, "Admin");
                     }
